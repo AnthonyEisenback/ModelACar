@@ -7,6 +7,16 @@ import java.util.Scanner;
     public class Vehicle extends  Custom {
         private Scanner input = new Scanner(System.in);
 
+        public Vehicle(Scanner input, String color, String make, String model, int year, int gas, int speed) {
+            this.input = input;
+            this.color = color;
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.gas = gas;
+            this.speed = speed;
+        }
+
         public Vehicle() {
             setMake();
             setModel();
@@ -100,7 +110,7 @@ import java.util.Scanner;
                 System.out.println("The car " + vehicle.getMake() + " " + vehicle.getModel() + " is going " + vehicle.getSpeed() + " Mph and has " + getGas() +  "% of fuel remaining!");
             }
             Menu menu = new Menu();
-            menu.menu(vehicle);
+            menu.menu2(vehicle);
         }
         public void driveCar2(com.company.Vehicle vehicle) {
             for (int seconds = 0; seconds <=5; seconds++) {
@@ -111,7 +121,7 @@ import java.util.Scanner;
 
             }
             Menu menu = new Menu();
-            menu.menu(vehicle);
+            menu.menu2(vehicle);
         }
         public void getGas(Vehicle vehicle) {
             vehicle.setGas(100);

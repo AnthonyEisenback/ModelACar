@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Scanner;
-
 
 public class Main {
 
@@ -10,10 +8,12 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         Menu menu = new Menu();
-        menu.createcarmenu();
+        menu.menu2(custom);
+
+        Vehicle vehicle = new Vehicle();
+        vehicle.getCarInfo();
 
 
 
-
-        }
     }
+}

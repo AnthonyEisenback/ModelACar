@@ -3,6 +3,8 @@ package com.company;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static com.company.Main.custom;
+
 public class Custom {
     private Scanner input = new Scanner(System.in);
 
@@ -28,7 +30,8 @@ public class Custom {
 
     public void setMake() {
         System.out.println("What brand of Car would you like?");
-   make = input.nextLine();   }
+        make = input.nextLine();
+    }
 
     public String getModel() {
         return model;
@@ -87,36 +90,38 @@ public class Custom {
         System.out.println("The current car is a " + getMake() + " " + getModel() + ". It is going " + getSpeed() + "mph and has " + getGas() + "% of it's gas left.");
     }
 
-    public void driveCar(Custom custom) {
+
+    public void driveCar() {
         for (int seconds = 0; seconds <= 5; seconds++) {
 //            get current gas
 //                    get current speed
             custom.setSpeed(custom.getSpeed() + 1);
             custom.setGas(custom.getGas() - 1);
 
-            System.out.println("The car " + custom.getMake() + " " + custom.getModel() + " is going " + custom.getSpeed() + " Mph and has " + getGas() +  "% of fuel remaining!");
+            System.out.println("The car " + custom.getMake() + " " + custom.getModel() + " is going " + custom.getSpeed() + " Mph and has " + getGas() + "% of fuel remaining!");
         }
         Menu menu = new Menu();
-        menu.menu(custom);
+        menu.menu2(custom);
     }
-    public void driveCar2(Custom custom) {
-        for (int seconds = 0; seconds <=5; seconds++) {
-            custom.setSpeed(custom.getSpeed()-1);
-            custom.setGas(custom.getGas()-1);
 
-            System.out.println("The car " + custom.getMake() + " " + custom.getModel() + " is going " + custom.getSpeed() + " Mph and has " + getGas() +  "% of fuel remaining!");
+    public void driveCar2() {
+        for (int seconds = 0; seconds <= 5; seconds++) {
+            custom.setSpeed(custom.getSpeed() - 1);
+            custom.setGas(custom.getGas() - 1);
+
+            System.out.println("The car " + custom.getMake() + " " + custom.getModel() + " is going " + custom.getSpeed() + " Mph and has " + getGas() + "% of fuel remaining!");
 
         }
         Menu menu = new Menu();
-        menu.menu(custom);
+        menu.menu2(custom);
     }
+
     public void getGas(Custom custom) {
         custom.setGas(100);
 
         System.out.println("Your " + custom.getMake() + " " + custom.getModel() + " " + "has been refueled");
         Menu menu = new Menu();
-        menu.menu(custom);
-
+        menu.menu2(custom);
 
 
     }
