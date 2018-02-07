@@ -3,13 +3,10 @@ package com.company;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.company.Main.custom;
-
 public class Menu {
 
     Scanner scanner = new Scanner(System.in);
     private Vehicle vehicle;
-
 
     public void menu2(Custom custom) {
         try {
@@ -25,6 +22,7 @@ public class Menu {
                 case 1:
                     Custom car = new Custom();
                     car.getCarInfo();
+
 //                    accelerate
                     break;
 
@@ -46,6 +44,8 @@ public class Menu {
         }
     }
 
+
+
     public void go(Menu menu) {
 
 
@@ -56,17 +56,22 @@ public class Menu {
             switch (scanner.nextInt()) {
                 case 1:
 
+                    Custom custom3 = new Custom();
+                    custom3.moveCar();
+
                     //                    accelerate
-                    System.out.println(custom.getGas());
                     break;
 
                 case 2:
-                    
+                    Custom custom4 = new Custom();
+                    custom4.driveCar2();
+
                     //                      decelerate
                     break;
                 case 3:
+                    Custom custom5 = new Custom();
                     //                      Fill gas tank
-                    vehicle.getGas(vehicle);
+                    custom5.getGas();
                     break;
                 case 4:
                     //                    exit program

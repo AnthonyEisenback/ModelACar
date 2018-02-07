@@ -83,6 +83,7 @@ public class Custom {
     }
 
     public void moveCar() {
+
         for (int seconds = 0; seconds <= 5; seconds++) {
 //            get current gas
 //                    get current speed
@@ -91,11 +92,10 @@ public class Custom {
 
             System.out.println("The car " + custom.getMake() + " " + custom.getModel() + " is going " + custom.getSpeed() + " Mph and has " + getGas() + "% of fuel remaining!");
         }
-        Menu menu = new Menu();
-        menu.menu2(custom);
+
     }
 
-    public void driveCar2(com.company.Custom custom) {
+    public void driveCar2() {
         for (int seconds = 0; seconds <= 5; seconds++) {
             custom.setSpeed(custom.getSpeed() - 1);
             custom.setGas(custom.getGas() - 1);
@@ -103,19 +103,14 @@ public class Custom {
             System.out.println("The car " + custom.getMake() + " " + custom.getModel() + " is going " + custom.getSpeed() + " Mph and has " + getGas() + "% of fuel remaining!");
 
         }
-        Menu menu = new Menu();
-        menu.menu2(custom);
+
     }
 
     public void fillGas() {
         custom.setGas(100);
 
         System.out.println("Your " + custom.getMake() + " " + custom.getModel() + " " + "has been refueled");
-        Menu menu = new Menu();
-        menu.menu2(custom);
-
 
     }
 
 }
-
