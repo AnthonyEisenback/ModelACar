@@ -16,14 +16,6 @@ public class Custom {
         setGas(100);
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public String getMake() {
         return make;
     }
@@ -90,8 +82,7 @@ public class Custom {
         System.out.println("The current car is a " + getMake() + " " + getModel() + ". It is going " + getSpeed() + "mph and has " + getGas() + "% of it's gas left.");
     }
 
-
-    public void driveCar() {
+    public void moveCar() {
         for (int seconds = 0; seconds <= 5; seconds++) {
 //            get current gas
 //                    get current speed
@@ -104,7 +95,7 @@ public class Custom {
         menu.menu2(custom);
     }
 
-    public void driveCar2() {
+    public void driveCar2(com.company.Custom custom) {
         for (int seconds = 0; seconds <= 5; seconds++) {
             custom.setSpeed(custom.getSpeed() - 1);
             custom.setGas(custom.getGas() - 1);
@@ -116,7 +107,7 @@ public class Custom {
         menu.menu2(custom);
     }
 
-    public void getGas(Custom custom) {
+    public void fillGas() {
         custom.setGas(100);
 
         System.out.println("Your " + custom.getMake() + " " + custom.getModel() + " " + "has been refueled");
