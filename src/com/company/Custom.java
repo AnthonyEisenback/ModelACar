@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 import static com.company.Main.custom;
 
-public class Custom {
+public class Custom extends Vehicle {
     private Scanner input = new Scanner(System.in);
 
-    public Custom() {
-        setMake();
-        setModel();
-        setYear();
-        setSpeed(0);
-        setGas(100);
+    public Custom(String make, String model, int year) {
+        super(make, model, year);
+
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+
     }
 
     public String getMake() {
@@ -43,7 +43,6 @@ public class Custom {
         try {
             year = input.nextInt();
         } catch (InputMismatchException ime) {
-            input.nextLine();
             System.out.println("please enter a number for your cars year.");
             setYear();
         }
@@ -80,6 +79,46 @@ public class Custom {
 
     public void getCarInfo() {
         System.out.println("The current car is a " + getMake() + " " + getModel() + ". It is going " + getSpeed() + "mph and has " + getGas() + "% of it's gas left.");
+
+        Scanner scanner = new Scanner(System.in);
+
+        Vehicle vehicle = new Vehicle(make, model, year);
+        System.out.println("1. Accelerate \n2. Decelerate \n3.Fill up the gas tank \n4.Exit");
+
+        try {
+
+
+
+            switch (scanner.nextInt()) {
+
+                case 1:
+                    custom.moveCar();
+                    //                    accelerate
+                    break;
+
+                case 2:
+                    custom.getCarInfo();
+                    custom.driveCar2();
+
+                    //                      decelerate
+                    break;
+                case 3:
+                    custom.getCarInfo();
+                    custom.fillGas();
+                    //                      Fill gas tank
+                    break;
+                case 4:
+                    //                    exit program
+                    System.exit(0);
+
+                default:
+                    System.out.println("Please enter a number between one and four.");
+
+
+            }
+        } catch (InputMismatchException ime) {
+            System.out.println("Please enter a number between one and four.");
+        }
     }
 
     public void moveCar() {

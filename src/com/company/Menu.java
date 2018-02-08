@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import com.company.Vehicle;
 
 public class Menu {
 
@@ -20,9 +21,14 @@ public class Menu {
         try {
             switch (scanner.nextInt()) {
                 case 1:
-                    Custom car = new Custom();
-                    car.getCarInfo();
-
+                    System.out.println("What is the make of your vehicle?");
+                    Scanner scannerBanner = new Scanner(System.in);
+                    String banner = scannerBanner.nextLine();
+                    System.out.println("What is the model of your vehicle?");
+                    String model = scannerBanner.nextLine();
+                    System.out.println("What is the year of your Vehicle?");
+                    int year = scannerBanner.nextInt();
+                    Custom custom1 = new Custom(banner, model, year);
 //                    accelerate
                     break;
 
@@ -48,30 +54,27 @@ public class Menu {
 
     public void go(Menu menu) {
 
-
-
         System.out.println("1. Accelerate \n2. Decelerate \n3.Fill up the gas tank \n4.Exit");
 
         try {
+
             switch (scanner.nextInt()) {
                 case 1:
-
-                    Custom custom3 = new Custom();
-                    custom3.moveCar();
-
+                    vehicle.getCarInfo();
+//                    vehicle.(vehicle);
                     //                    accelerate
                     break;
 
                 case 2:
-                    Custom custom4 = new Custom();
-                    custom4.driveCar2();
+                    vehicle.getCarInfo();
+                    vehicle.driveCar2(vehicle);
 
                     //                      decelerate
                     break;
                 case 3:
-                    Custom custom5 = new Custom();
+                    vehicle.getCarInfo();
+                    vehicle.getGas();
                     //                      Fill gas tank
-                    custom5.getGas();
                     break;
                 case 4:
                     //                    exit program
